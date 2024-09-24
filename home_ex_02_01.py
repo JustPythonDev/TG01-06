@@ -12,6 +12,7 @@ from config import TOKEN, OPEN_WEATHER_API
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
+translator = Translator()
 
 
 def get_weather(city):
@@ -60,10 +61,9 @@ async def send_voice(message: Message):
 
 @dp.message(F.text.startswith('Переведи '))
 async def send_voice(message: Message):
-    translator = Translator()
     original_msg = message.text[len("Переведи "):]
     print(original_msg)
-    translated_text = translator.translate(original_msg, dest='en')
+    translated_text = translator.translate(original_msg, src='auto', dest='en').text
     print(translated_text)
     await message.answer(translated_text)
 
