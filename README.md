@@ -82,3 +82,4 @@ id (INTEGER, PRIMARY KEY, AUTOINCREMENT) name (TEXT) age (INTEGER) grade (TEXT)
 
 ### ДЗ
 Разработайте телеграм-бота со своим функционалом с использованием разных сторонних api (ссылки выше).
+Использовала https://deckofcardsapi.com/ - сервис для создания колоды карт и манипуляций с ней
